@@ -1,4 +1,4 @@
-class GamesController < ApplicationController
+class Api::V1::GamesController < ApplicationController
   def index
     @games = Game.all
 
@@ -8,8 +8,13 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
-      render json: @game. status: 200
+      render json: @game, status: 200
     end
+  end
+
+  def show
+    @game = Game.find(params[:id])
+    render json: @game, status: 200
   end
 
   def update
@@ -21,6 +26,6 @@ class GamesController < ApplicationController
 
   private
     def game_params
-      params.require(:game).permit(:level, :lives)
+      params.require(:game).permit(:score, :lives)
     end
 end

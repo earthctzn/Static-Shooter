@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Game.create([
+  {lives: 4, score: 0},
+  {lives: 4, score: 0}
+]);
+Score.create([
+  {player_name: 'Overlord', high_score: 10000, game_id: 1},
+  {player_name: 'Nessa', high_score: 9000, game_id: 2}
+])
