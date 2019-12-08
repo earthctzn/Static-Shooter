@@ -21,6 +21,6 @@ class GamesController < ApplicationController
 
   private
     def game_params
-      params.require(:game).permit(:score)
+      params.require(:game).permit(:level, :lives)
     end
 end
