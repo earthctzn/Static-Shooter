@@ -7,10 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Game.create([
-  {lives: 4, score: 0},
-  {lives: 4, score: 0}
+  {lives: 4},
+  {lives: 4}
 ]);
 Score.create([
-  {player_name: 'Overlord', high_score: 10000, game_id: 1},
-  {player_name: 'Nessa', high_score: 9000, game_id: 2}
+  {game_score: 4500, high_score: 10000, game_id: 1, player_id: 1},
+  {game_score: 7600, high_score: 9000, game_id: 2, player_id: 2}
 ])
+Player.create([
+  {name: 'Overlord'},
+  {name: 'Nessa'}
+])
+
