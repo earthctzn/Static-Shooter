@@ -17,7 +17,18 @@ class Api::V1::ScoresController < ApplicationController
     render json: @score, status: 200
   end
 
-  def score_params
-    params.require(:score).permit(:game_score, :high_score, :game_id, :player_id)
+  def update
+    @score = Score.find(params[:id])
+    if @score.update
+      render json: @score, status: 200
+    else
+      render json: {message: "error on update"}
+    end
   end
+
+  private
+
+    def score_params
+      params.require(:score).permit(:game_score, :high_score, :player_name, :game_id)
+    end
 end

@@ -9,6 +9,8 @@ class Api::V1::GamesController < ApplicationController
     @game = Game.new(game_params)
     if @game.save
       render json: @game, status: 200
+    else
+      render json: {message: "error on create"}
     end
   end
 
@@ -21,11 +23,13 @@ class Api::V1::GamesController < ApplicationController
     @game = Game.find(params[:id])
     if @game.update
       render json: @game, status: 200
+    else
+      render json: {message: "error on update"}
     end
   end
 
   private
     def game_params
-      params.require(:game).permit(:lives)
+      params.require(:game).permit(:score_id)
     end
 end
