@@ -20,4 +20,9 @@ class Api::V1::GamesController < ApplicationController
     render json: game, status: 200
   end
 
+  def top_scores
+    game = Game.top_scores()
+    render json: game, status: 200
+  end
+
 end
