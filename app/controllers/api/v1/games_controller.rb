@@ -6,30 +6,18 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new(game_params)
-    if @game.save
-      render json: @game, status: 200
+    player = Player.find_or_create_by(name: params[:player_name])
+    game = Game.new(player: player, score: params[:score])
+    if game.save
+      render json: game, status: 200
     else
       render json: {message: "error on create"}
     end
   end
 
-  def show
-    @game = Game.find(params[:id])
-    render json: @game, status: 200
+  def top_score
+    game = Game.top_score()
+    render json: game, status: 200
   end
 
-  def update
-    @game = Game.find(params[:id])
-    if @game.update
-      render json: @game, status: 200
-    else
-      render json: {message: "error on update"}
-    end
-  end
-
-  private
-    def game_params
-      params.require(:game).permit(:score_id)
-    end
 end
