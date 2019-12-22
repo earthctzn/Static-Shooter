@@ -22,7 +22,7 @@ class Api::V1::GamesController < ApplicationController
 
   def top_scores
     game = Game.top_scores()
-    render json: game, status: 200
+    render json: game, include: [:player], status: 200
   end
 
 end
