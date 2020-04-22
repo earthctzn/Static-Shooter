@@ -17,4 +17,3 @@ Player.create([
   {name: "BurtReinolds"}
 ])
 
-
