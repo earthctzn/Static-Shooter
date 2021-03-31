@@ -17,6 +17,7 @@ gem 'puma', '>= 4.3.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem "activesupport", ">= 6.0.3.3"
 gem "actionpack", ">= 6.0.3.2"
+gem 'activerecord', '>= 6.0.3.5'
 
 # gem "actionview", ">= 6.0.3.3"
 # Use Active Storage variant
