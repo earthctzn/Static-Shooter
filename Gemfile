@@ -15,7 +15,7 @@ gem 'puma', '>= 4.3.5'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem "activesupport", ">= 6.0.3.3"
+gem "activesupport", ">=7.0.2.3"
 gem "actionpack", ">=7.0.2.3"
 gem 'activerecord', '>=7.0.2.3'
 
